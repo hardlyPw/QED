@@ -10,22 +10,21 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        // 게임이 시작될 때 요원의 물리 몸통(Rigidbody2D)을 찾아서 연결해줘!
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>(); // 시작할 때 내 몸통(물리) 찾기
     }
 
     void Update()
     {
-        // 1. 입력은 Update에서 빠릿빠릿하게 받기
+        // 1. 입력 받기 (Update에서 처리해야 키보드 반응이 빠름)
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
 
-        moveDir = new Vector2(moveX, moveY).normalized;
+        moveDir = new Vector2(moveX, moveY).normalized; // 대각선 이동 속도 보정
     }
 
     void FixedUpdate()
     {
-        // 2. 실제 물리적인 이동은 FixedUpdate에서 처리! (벽 뚫림, 덜덜거림 완벽 방지)
+        // 2. 실제 물리 이동 (FixedUpdate에서 처리해야 벽 충돌이 자연스러움)
         rb.linearVelocity = moveDir * moveSpeed;
     }
 }
