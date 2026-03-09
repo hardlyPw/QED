@@ -4,13 +4,16 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("이동 설정")]
     public float moveSpeed = 5f;
-
     private Rigidbody2D rb;
     private Vector2 moveDir;
 
-    [Header("SPUM 애니메이션 연결")]
+    [Header("SPUM 애니메이션")]
     public SPUM_Prefabs spumPrefab;
     private int currentDirIndex = 0;
+
+    [Header("공격 이펙트 설정")]
+    public GameObject slashPrefab; //공격 이펙트로 뭘 소환활지
+    public Transform attackPoint; // 어디에 소환될지
 
     // 🌟 [추가된 변수: 공격 중인지 확인하는 깃발] 🌟
     private bool isAttacking = false;
@@ -18,12 +21,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
-        if (spumPrefab == null)
-        {
-            spumPrefab = GetComponent<SPUM_Prefabs>();
-        }
-
+        if(spumPrefab == null) spumPrefab = GetComponent<SPUM_Prefabs>();
         spumPrefab.OverrideControllerInit();
     }
 
@@ -112,9 +110,14 @@ public class PlayerMovement : MonoBehaviour
     private void PerformAttack()
     {
         isAttacking = true; // 나 지금 공격 시작했다!
+        PlaySpumAnimSafely(PlayerState.ATTACK, 0); // 공격 리스트의 0번(0_Attack_Normal)을 실행해라! -> 캐릭터 휘두르는 모션 재생
 
-        // 공격 리스트의 0번(0_Attack_Normal)을 실행해라!
-        PlaySpumAnimSafely(PlayerState.ATTACK, 0);
+        if(slashPrefab != null && attackPoint != null)
+        {
+            GameObject slash  = Instantiate(slashPrefab, attackPoint.position, attackPoint.rotation);   // (무엇을, 어느 위치에, 어떤 각도로) 소환할지 결정
+
+            Destroy(slash, 0.5f); //0.5초후에 삭제. 소환한 뒤엔 지워야함. 애니메이션 시간에 맞게 0.5초후 삭제됨.
+        }
 
         // 0.5초 뒤에 ResetAttack 함수를 실행해서 다시 움직일 수 있게 만들어라!
         // (애니메이션 길이에 따라 0.5f 숫자를 조절해 주면 돼)
