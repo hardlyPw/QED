@@ -13,7 +13,8 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("공격 이펙트 설정")]
     public GameObject slashPrefab; //공격 이펙트로 뭘 소환활지
-    public Transform attackPoint; // 어디에 소환될지
+    public Transform centerPoint;  // ⬅️ 캐릭터의 '중심'을 잡아줄 오브젝트
+    public float attackRadius = 1.5f; // ⬅️ 원의 반지름 (인스펙터에서 조절 가능!)
 
     // 🌟 [추가된 변수: 공격 중인지 확인하는 깃발] 🌟
     private bool isAttacking = false;
@@ -110,11 +111,36 @@ public class PlayerMovement : MonoBehaviour
     private void PerformAttack()
     {
         isAttacking = true; // 나 지금 공격 시작했다!
+        FaceMouseDirection(); //  공격을 시작하자마자 마우스 방향으로 몸을 휙 돌린다!
         PlaySpumAnimSafely(PlayerState.ATTACK, 0); // 공격 리스트의 0번(0_Attack_Normal)을 실행해라! -> 캐릭터 휘두르는 모션 재생
-
-        if(slashPrefab != null && attackPoint != null)
+        
+        if (slashPrefab != null && centerPoint != null)
         {
-            GameObject slash  = Instantiate(slashPrefab, attackPoint.position, attackPoint.rotation);   // (무엇을, 어느 위치에, 어떤 각도로) 소환할지 결정
+            // 1. 마우스 위치를 유니티의 '월드 좌표'로 변환
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mousePos.z = 0f; // 2D 게임이므로 Z축은 0으로 고정
+            
+            // 2. 중심점 위치
+            Vector3 centerPos = centerPoint.position;
+
+            // 3. 방향 벡터 계산: (마우스 위치 - 중심점 위치) 후 정규화(길이를 1로 만듦)
+            Vector3 direction = (mousePos - centerPos).normalized;
+
+            // 4. 소환위치 계산: (P_spawn = P_center + V_dir * R)
+            Vector3 spawnPos = centerPos + direction * attackRadius;
+
+            // 5. 회전 각도 계산 (마우스가 있는 곳을 쳐다보게 만들기)
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;    
+
+            GameObject slash  = Instantiate(slashPrefab, spawnPos, Quaternion.Euler(0, 0, angle));   // (무엇을, 어느 위치에, 어떤 각도로) 소환할지 결정
+
+            // 7. (디테일) 마우스가 캐릭터 왼쪽에 있으면 참격이 위아래로 뒤집혀 보일 수 있으니 보정
+            if (direction.x < 0)
+            {
+                Vector3 sScale = slash.transform.localScale;
+                sScale.y = -Mathf.Abs(sScale.y); // Y축을 뒤집어줌
+                slash.transform.localScale = sScale;
+            }
 
             Destroy(slash, 0.5f); //0.5초후에 삭제. 소환한 뒤엔 지워야함. 애니메이션 시간에 맞게 0.5초후 삭제됨.
         }
@@ -127,5 +153,26 @@ public class PlayerMovement : MonoBehaviour
     private void ResetAttack()
     {
         isAttacking = false; // 공격 끝! 다시 걷기 가능
+    }
+
+    // 마우스가 있는 방향으로 캐릭터를 쳐다보게 하는 범용 함수
+    private void FaceMouseDirection()
+    {
+        // 1. 마우스의 월드 좌표 가져오기
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        // 2. 마우스 X좌표 - 캐릭터 X좌표 = 방향 (음수면 왼쪽, 양수면 오른쪽)
+        float directionX = mousePos.x - transform.position.x;
+
+        // 3. 우리가 예전에 만들어둔 뒤집기 함수를 그대로 재활용!
+        HandleFlip(directionX);
+    }
+
+    private void HandleFlip(float x)
+    {
+        Vector3 currentScale = transform.localScale;
+        if (x < 0) currentScale.x = Mathf.Abs(currentScale.x);
+        else if (x > 0) currentScale.x = -Mathf.Abs(currentScale.x);
+        transform.localScale = currentScale;
     }
 }

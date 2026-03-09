@@ -2400,7 +2400,7 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5300178681624474475, guid: dba443a66548243fe806dd91db6511af, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1669858354}
+      addedObject: {fileID: 1428182543}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5636758013200641154, guid: dba443a66548243fe806dd91db6511af, type: 3}
       insertIndex: -1
@@ -3227,6 +3227,41 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1428182542
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1428182543}
+  m_Layer: 5
+  m_Name: CharacterCenterPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1428182543
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428182542}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 677268913}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0.297}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1647563399
 GameObject:
   m_ObjectHideFlags: 0
@@ -3273,41 +3308,6 @@ Transform:
   - {fileID: 1060625584}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1669858353
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1669858354}
-  m_Layer: 5
-  m_Name: AttackPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1669858354
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1669858353}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 677268913}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.49, y: 0.36}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2054143220 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5636758013200641154, guid: dba443a66548243fe806dd91db6511af, type: 3}
@@ -3338,8 +3338,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   moveSpeed: 5
   spumPrefab: {fileID: 2054143221}
-  slashPrefab: {fileID: 4577952617147880489, guid: 4a8c1e44c6c8f9140ae9c500a0254b8b, type: 3}
-  attackPoint: {fileID: 1669858354}
+  slashPrefab: {fileID: 3247869824251988827, guid: 4a8c1e44c6c8f9140ae9c500a0254b8b, type: 3}
+  centerPoint: {fileID: 1428182543}
+  attackRadius: 1.5
 --- !u!50 &2054143224
 Rigidbody2D:
   serializedVersion: 5
