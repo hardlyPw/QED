@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7d8633da0a7c17d409fe86b541713749
+guid: 99de513686b61aa43878b75f907e6fdd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9204998080779582787
-    second: slash-removebg-preview_0
+      213: -9193121625135745736
+    second: slash-removebg-preview-Photoroom_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: slash-removebg-preview_0
+      name: slash-removebg-preview-Photoroom_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,14 +128,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: db20bf40407414080800000000000000
-      internalID: -9204998080779582787
+      spriteID: 83572d4d6987b6080800000000000000
+      internalID: -9193121625135745736
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slash-removebg-preview_1
+      name: slash-removebg-preview-Photoroom_1
       rect:
         serializedVersion: 2
         x: 178
@@ -150,14 +150,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fdbb50b50b18f2b4282ea0d2b305b819
-      internalID: -1037859846
+      spriteID: 061d62e3dc5259449bd205ccaac322fb
+      internalID: 342916378
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slash-removebg-preview_2
+      name: slash-removebg-preview-Photoroom_2
       rect:
         serializedVersion: 2
         x: 356
@@ -172,14 +172,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b237ee8e79b677c498c6f565eb1f1db8
-      internalID: 1392257059
+      spriteID: 206f6aa84ae88f44783a8ec792745191
+      internalID: -723439100
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slash-removebg-preview_3
+      name: slash-removebg-preview-Photoroom_3
       rect:
         serializedVersion: 2
         x: 534
@@ -194,14 +194,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d949ef552db483047842110cebb7156b
-      internalID: 987068982
+      spriteID: 55f649ee758fb754d870c37a8f7bf9e7
+      internalID: 1124361759
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slash-removebg-preview_4
+      name: slash-removebg-preview-Photoroom_4
       rect:
         serializedVersion: 2
         x: 0
@@ -216,14 +216,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d1cf9053c9660441ac15ec61dafdd9a
-      internalID: -1495742569
+      spriteID: eaf12b3e38e9d714a9abb38e774d4d1d
+      internalID: 1506721592
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slash-removebg-preview_5
+      name: slash-removebg-preview-Photoroom_5
       rect:
         serializedVersion: 2
         x: 178
@@ -238,14 +238,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0685ba7ccbfe72e44a9a9f6113b30deb
-      internalID: -1408294055
+      spriteID: 0570cf2ffec067d469f06f90dac2b91d
+      internalID: -1586403188
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slash-removebg-preview_6
+      name: slash-removebg-preview-Photoroom_6
       rect:
         serializedVersion: 2
         x: 356
@@ -260,14 +260,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd7ed46b509c2e243882924af8326f41
-      internalID: -952792814
+      spriteID: ac7c85c255e0b9b418e38a2df945ecc3
+      internalID: 514262205
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slash-removebg-preview_7
+      name: slash-removebg-preview-Photoroom_7
       rect:
         serializedVersion: 2
         x: 534
@@ -282,8 +282,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f99c4497eb199e4483665b87ec504e3
-      internalID: 1688327338
+      spriteID: d1e7088edcd17194795cee6c87d0ee2b
+      internalID: -1706680209
       vertices: []
       indices: 
       edges: []
@@ -292,7 +292,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 2c86301d2fb55dd40b3388e7ec365e02
+    spriteID: 71d396e7ec06299449a4ed9d380935dc
     internalID: 0
     vertices: []
     indices: 
@@ -304,14 +304,14 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":2.0},"gridSpriteSize":{"x":178.0,"y":175.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      slash-removebg-preview_0: -9204998080779582787
-      slash-removebg-preview_1: -1037859846
-      slash-removebg-preview_2: 1392257059
-      slash-removebg-preview_3: 987068982
-      slash-removebg-preview_4: -1495742569
-      slash-removebg-preview_5: -1408294055
-      slash-removebg-preview_6: -952792814
-      slash-removebg-preview_7: 1688327338
+      slash-removebg-preview-Photoroom_0: -9193121625135745736
+      slash-removebg-preview-Photoroom_1: 342916378
+      slash-removebg-preview-Photoroom_2: -723439100
+      slash-removebg-preview-Photoroom_3: 1124361759
+      slash-removebg-preview-Photoroom_4: 1506721592
+      slash-removebg-preview-Photoroom_5: -1586403188
+      slash-removebg-preview-Photoroom_6: 514262205
+      slash-removebg-preview-Photoroom_7: -1706680209
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -3338,7 +3338,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   moveSpeed: 5
   spumPrefab: {fileID: 2054143221}
-  slashPrefab: {fileID: 7502447514721627438, guid: 1d4e8ac2a19fb6c46a63105e064c90d2, type: 3}
+  slashPrefab: {fileID: 4577952617147880489, guid: 4a8c1e44c6c8f9140ae9c500a0254b8b, type: 3}
   attackPoint: {fileID: 1669858354}
 --- !u!50 &2054143224
 Rigidbody2D:
