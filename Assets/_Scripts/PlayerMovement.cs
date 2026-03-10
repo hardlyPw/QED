@@ -133,9 +133,10 @@ public class PlayerMovement : MonoBehaviour
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;    
 
             GameObject slash  = Instantiate(slashPrefab, spawnPos, Quaternion.Euler(0, 0, angle));   // (무엇을, 어느 위치에, 어떤 각도로) 소환할지 결정
-
-            // 7. (디테일) 마우스가 캐릭터 왼쪽에 있으면 참격이 위아래로 뒤집혀 보일 수 있으니 보정
-            if (direction.x < 0)
+            //Quaternion.Euler(0, 0, angle): 방금 구한 마우스를 향하는 회전 각도.
+            
+            //각도를 180도 돌려버리면, 방향은 맞으나 위아래가 뒤집혀 버리는 현상 발생. 따라서 y축 뒤집어주는거임
+            if (direction.x < 0) 
             {
                 Vector3 sScale = slash.transform.localScale;
                 sScale.y = -Mathf.Abs(sScale.y); // Y축을 뒤집어줌
@@ -158,7 +159,7 @@ public class PlayerMovement : MonoBehaviour
     // 마우스가 있는 방향으로 캐릭터를 쳐다보게 하는 범용 함수
     private void FaceMouseDirection()
     {
-        // 1. 마우스의 월드 좌표 가져오기
+        // 1. 마우스의 월드 좌표 가져오기. Screen 좌표계의 마우스 위치를 월드좌표계로 변환해서 mousePos에 저장
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         // 2. 마우스 X좌표 - 캐릭터 X좌표 = 방향 (음수면 왼쪽, 양수면 오른쪽)
