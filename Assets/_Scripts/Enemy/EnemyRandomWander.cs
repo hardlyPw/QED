@@ -23,7 +23,7 @@ public class EnemyRandomWander : MonoBehaviour
     void FixedUpdate()
     {
         // 물리 엔진을 이용해 부드럽게 이동시킴
-        rb.velocity = moveDirection * moveSpeed;
+        rb.linearVelocity = moveDirection * moveSpeed;
 
         // 이동하는 방향에 맞춰 좌우 반전 (Flip)
         if (moveDirection.x != 0)

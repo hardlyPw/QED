@@ -3252,6 +3252,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7209973164528132834, guid: b03dbbfead0632d44a5a4253c0fe3949, type: 3}
+      propertyPath: maxHealth
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 269998067488529708, guid: b03dbbfead0632d44a5a4253c0fe3949, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.46898
@@ -3295,6 +3299,14 @@ PrefabInstance:
     - target: {fileID: 4415820255549338825, guid: b03dbbfead0632d44a5a4253c0fe3949, type: 3}
       propertyPath: m_Name
       value: Enemy_Number1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5730810415331901607, guid: b03dbbfead0632d44a5a4253c0fe3949, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5730810415331901607, guid: b03dbbfead0632d44a5a4253c0fe3949, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

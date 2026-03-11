@@ -104,9 +104,10 @@ GameObject:
   - component: {fileID: 4091539328792556682}
   - component: {fileID: 1937995456774713597}
   - component: {fileID: 7051027536925490362}
+  - component: {fileID: -7209973164528132834}
   m_Layer: 0
   m_Name: Enemy_Number1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -238,6 +239,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.313829, y: 2.9312587}
   m_EdgeRadius: 0
+--- !u!114 &-7209973164528132834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4415820255549338825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bdcc64ec7cbf7244b61a1081935226a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
+  maxHealth: 3
 --- !u!1 &8815306550828297089
 GameObject:
   m_ObjectHideFlags: 0
