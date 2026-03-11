@@ -3254,8 +3254,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -7209973164528132834, guid: b03dbbfead0632d44a5a4253c0fe3949, type: 3}
       propertyPath: maxHealth
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: -7209973164528132834, guid: b03dbbfead0632d44a5a4253c0fe3949, type: 3}
+      propertyPath: flashMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: afd6ce83412102d4cbc59f3324f4631f, type: 2}
     - target: {fileID: 269998067488529708, guid: b03dbbfead0632d44a5a4253c0fe3949, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.46898
